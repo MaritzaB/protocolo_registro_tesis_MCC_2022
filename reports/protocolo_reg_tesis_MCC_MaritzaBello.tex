@@ -1,0 +1,426 @@
+% %%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSTITUTO POLITÉCNICO NACIONAL CENTRO DE INVESTIGACIÓN EN COMPUTACIÓN 
+% PROTOCOLO PARA REGISTRO DE TEMA DE TESIS 
+% MAESTRÍA EN CIENCIAS DE LA COMPUTACIÓN MAESTRÍA EN
+% CIENCIAS EN INGENIERÍA DE CÓMPUTO SEMESTRE B22
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[runningheads,a4paper]{llncs}
+\usepackage[utf8]{inputenc}
+% \usepackage{default} \usepackage[spanish]{babel} % Para separar correctamente
+% las palabras
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{url}
+\urldef{\mailsa}\path|abelloy2022@cic.ipn.mx|
+\urldef{\mailsb}\path|{amagdasaldana@cic.ipn.mx, jguzmanl@cic.ipn.mx}|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  
+
+% Titulo de la tesis
+\title{Modelado de nicho ecológico de aves marinas a partir de variables oceanográficas usando algoritmos de machine learning.}
+\titlerunning{ }
+
+% A continuación el nombre del alumno. Enseguida, y nombre del primer director
+% de tesis En caso de existir, a continuación el nombre del segundo director de
+% tesis En ambos casos, favor de anotar los correos electrónicos ...@cic.ipn.mx
+% de los directores si ambos están adscritos al CIC Si existe un director
+% externo, se preferirá anotar su correo institucional.
+\author{Ana Maritza Bello Yañez,\\
+Ana María Magdalena Saldaña Pérez,\\
+José Giovanni Guzmán Lugo}
+
+% Adscripciones
+\authorrunning{ }
+\institute{Centro de Investigación en Computación\\
+Av. Juan de Dios Bátiz, esq. Miguel Othón de Mendizábal\\
+Col. Nueva Industrial Vallejo, Alcaldía Gustavo A. Madero, C.P. 07738, CDMX\\
+Unidad Profesional Adolfo López Matéos (Zacaténco)\\
+\mailsa\\
+\mailsb\\
+\url{http://www.cic.ipn.mx}}
+
+\maketitle
+
+\begin{abstract} Implementaremos diferentes algoritmos de machine learning para
+modelado de nicho ecológico de aves marinas a partir de variables
+oceanográficas. Compararemos los algoritmos y evaluaremos cual de todos es el
+que mejor se ajusta para el modelado de nicho ecológico.
+\keywords{machine-learning, modelo de nicho ecológico,modelado estadístico, 
+algoritmos de modelado, mapeo de distribuciones de especies, distribuciones,
+nicho ecológicos}
+\end{abstract}
+
+
+\section{Introducción}
+\subsection{Antecedentes}
+
+Los modelos de nicho ecológico (SDM por sus siglas en inglés, \textit{species
+distribution models}) permiten hacer inferencias sobre la distribución
+de especies y comunidades de especies, permitiendo identificar áreas
+prioritarias para la conservación \cite{flores2019ecological}, en este caso de
+aves marinas.
+
+Un nicho ecológico es el rango de condiciones ambientales bajo las cuales un
+individuo en particular tiene un éxito reproductivo de por vida, es decir las
+condiciones idóneas bajo las cuales es capaz de reproducirse
+\cite{takola2022hutchinson}.
+
+Particularmente, las aves marinas son de importancia mundial ya que juegan un
+papel importante en las funciones ecológicas de los sistemas marinos, lo que las
+convierte en excelentes indicadores de largo plazo y gran escala
+\cite{furness1997seabirds}.
+
+De acuerdo con la Unión Internacional para la Conservación dela Naturaleza
+(Birdlife International, 2021b), cerca de una tercera parte de las 368 especies
+de aves marinas reconocidas se encuentran como críticamente amenazadas,
+amenazadas o vulnerables, y el 47\% de todas las especies de aves marinas
+mostraban tendencias de decrecimiento en sus poblaciones \cite{dias2019threats}.
+
+En México habítan alrededor del 11\% de las aves de todo el mundo, con lo que
+nuestro país se coloca en el onceavo lugar a nivel mundial de riqueza
+avifaunística \cite{mendez2021ecologia}.
+
+De las 368 especies de aves marinas del mundo, México alberga 126 especies
+reconocidas, de las cuales 20 se encuentran globalmente amenazadas, cuatro
+amenzadas y 13 como vulnerables \cite{mendez2021ecologia}.
+
+Debido a esto, la importancia de establecer modelos ecológicos que nos permitan
+delimitar áreas prioritarias para la conservavión de estas especies en nuestro país.
+
+Los modelos de nicho ecológico utilizan datos de ocurrencias de alguna especie
+que junto con datos ambientales nos permiten modelar correlativamente las
+condiciones ambientales bajo las que vive la especie en cuestión y así nos
+permiten predecir su hábitat idóneo.
+
+Los modelos de nicho ecológico se usan de cuatro formas \cite{warren2011ecological}:
+
+\begin{enumerate}
+\item Para estimar la idoneidad relativa del hábitat en áreas geográficas que se
+sabe que está ocupada por la especie.
+\item Para estimar la idoneidad relativa del hábitat en áreas geográficas que no
+se sabe que está ocupada por la especie.
+\item Para estimar los cambios en la idoneidad del hábitat a lo largo del
+tiempo dado un escenario específico de cambio ambiental.
+\item Como estimación del nicho de la especie.
+\end{enumerate}
+
+
+\subsection{Descripción de como se afronta esta problemática en la actualidad}
+
+La regresión logística, regresión de componentes y el análisis de árboles de
+clasificación y regresión, son comúnmente utilizados en el modelado ecológico
+mediante SIG \cite{munoz2004comparison}. Sin embargo, es importante hacer una
+comparativa de los algoritmos para evaluar cuál es el que nos genera un mejor
+modelo de hábitat para aves marinas.
+
+
+\subsection{Problemática a abordar en la tesis}
+
+Este trabajo busca resolver el problema de generar un marco de trabajo que nos
+permita comparar los algoritmos de aprendizaje máquina utilizados para modelar
+el nicho ecológico de aves marinas.
+
+\section{Características y generalidades}
+\subsection{Descripción de la solución al problema planteado}
+
+Implementaremos tres algoritmos de aprendizaje máquina para generar modelos de
+nicho ecológico a partir de variables oceanográficas. 
+
+\subsection{Contribuciones esperadas}
+
+\begin{itemize}
+    \item Implementar tres algoritmos de aprendizaje máquina 
+    \item Generar modelos de nicho ecológico a partir de datos de variables
+    oceanográficas y desplazamientos de aves marinas del Pacífico Mexicano.
+    \item Generar un marco de trabajo para comparar algoritmos de aprendizaje máquina.
+\end{itemize}
+
+\subsection{Justificación del desarrollo del trabajo}
+
+Los modelos de nicho ecológico nos permitirán determinar las características
+ambientales del hábitat idóneo para alguna ave marina en específico.
+
+\section{Redacción de objetivos e índice tentativo de la tesis}
+\subsection{Objetivo General:}
+Implementar diferentes algoritmos de aprendizaje máquina para modelado de nicho
+ecológico a partir de variables oceanográficas.
+
+\subsection{Objetivos específicos:}
+
+\paragraph{Objetivo 1.}
+
+Implementar diferentes algoritmos de aprendizaje máquina. Entre los
+propuestos están: Regresión lineal, árboles de desición, algoritmos de
+aprendizaje máquina como redes neuronales, máxima entropía o random forest.
+
+\paragraph{Objetivo 2.}
+
+Generar modelos de nicho ecológico usando variables oceanográficas y datos
+de desplazamientos de aves marinas.
+
+\paragraph{Objetivo 3.}
+
+Comparar los algoritmos de aprendizaje máquina y evaluar cuál es el que
+nos genera un mejor modelo.
+
+
+\subsection{Índice tentativo de la tesis:}
+
+\begin{enumerate}
+    \item Introducción
+    \item Estado del arte
+    \item Nichos ecológicos
+    \item Técnicas de modelado estadístico
+    \item Implementación de algoritmos
+    \item Pruebas y resultados
+    \item Conclusiones
+\end{enumerate}
+
+\section{Aspectos importantes a destacar del trabajo de tesis}
+Apoyarse del director de tesis para responder.
+\begin{itemize}
+    \item Importancia del modelado de nichos ecológicos.
+\end{itemize}
+
+
+\section{Plan de trabajo y cronograma}
+\subsection{ }
+Enumere y describa sucintamente las acciones y actividades que desarrollará para
+lograr los objetivos propuestos, así como los productos que se generarán como
+fruto del desarrollo de las actividades. 
+\begin{table}
+\begin{center}
+ \begin{tabular}{|p{2cm}|p{6cm}|p{6cm}|}
+\hline\noalign{\smallskip} Consecutivo & Actividades o acciones a desarrollar &
+Productos Esperados\\
+\noalign{\smallskip}
+\hline
+\noalign{\smallskip}
+1& Investigar estado del arte & Reporte técnico del estado del arte \\\hline
+2& Algoritmos de aprendizaje máquina & Implementación de los algoritmos \\\hline
+3& Comparación de algoritmos & Marco de trabajo para comparación de algoritmos \\\hline
+4& Prueba de algoritmo con datos de aves marinas & Modelos de nicho ecológico \\\hline
+5& Evaluación & Reporte de resultados y comparación \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsection{ }
+Debe señalar los meses estimados de inicio y término de cada una de las
+actividades descritas en el plan de trabajo, a partir de la fecha de
+presentación de esta solicitud.
+\begin{table}
+\begin{center}
+ \begin{tabular}{|l|c|c|c|c|}
+\hline              
+            & \multicolumn{4}{|c|}{Semestre} \\
+\hline
+Actividad   & 1 & 2 & 3 & 4 \\ \hline
+Cursar materias núcleo &  X  &   &   &   \\ \hline
+Planteamiento del tema de tesis &  X  &   &   &   \\ \hline
+Estudio del estado del arte &  X  & X  &   &   \\ \hline
+Búsqueda de herramientas tecnológicas relacionadas a investigación &  X  &  X &
+&   \\ \hline
+Aprendizaje de tecnología a emplear para la implementación &  X  &   &   &   \\ \hline
+Redacción de introducción &    &  X &   &   \\ \hline
+Redacción del estado del arte &    & X  &   &   \\ \hline
+Redacción de marco teórico &    &  X &   &   \\ \hline
+Estudio de metodologías de investigaciones espacio temporales &    & X  &   &
+\\ \hline
+Estructuración de la metodología propuesta &    &   &  X &   \\ \hline
+Desarrollo e implementación de metodología propuesta &    &   &  X &   \\ \hline
+Escenarios de prueba para la metodología pripuesta &    &   & X  &   \\ \hline
+Prueba de metodología en escenarios propuestos &    &   &  X &   \\ \hline
+Mejora de metodología a partir de resultados obtenidos &    &   & X  &   \\ \hline
+Redacción de metodología &    &   &   & X  \\ \hline
+Redacción de resultados &    &   &   &  X \\ \hline
+Redacción de conclusiones &    &   &   & X  \\ \hline
+Cursos relacionados con el desarrollo de tesis (materias insignia y
+especializadas) &  X  &  X & X  &   \\ \hline
+Estancia de investigación &    &   &   &  X \\ \hline
+Examen a puerta cerrada &    &   &   &  X \\ \hline
+Examen de grado &    &   &   &  X \\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\section{Recursos requeridos de hardware y software}
+
+Para realizar el trabajo se requiere:
+
+\begin{itemize}
+    \item Computadora para implementar algoritmos.
+    \item Base de datos de desplazamientos de aves marinas.
+\end{itemize}
+
+\section{Estancia de investigación}
+
+Se propone realizar una estancia de investigación a nivel nacional, en el estado
+de Baja California, para conocer el ecosistema estudiado en el proyecto, y
+obtener experiencias de primera mano que permitan aplicar el modelo desarrollado
+en un ambiente real. Se cuenta ya con el contacto del M. en C. Evaristo Manuel
+Rojas Mayoral para realizar dicho trabajo de campo. Se propone que la estancia
+sea realizada a inicios del cuarto semestre de maestría, con una duración de
+tres meses.
+
+\section{Plan de UA que cursará}
+
+Las UA a cursar son las siguientes:
+
+\begin{table}
+\begin{center}
+ \begin{tabular}{|p{7cm}|p{7cm}|}
+\hline\noalign{\smallskip} Primer Semestre & Segundo Semestre\\
+1. Diseño y análisis de algoritmos                  & 1.Teoría de la computación
+\\
+2. Matemáticas para ciencias de la computación      & 2.Reconocimiento de
+patrones \\
+3. Probabilidad, procesos aleatorios e inferencia   & 3. Fundamentos de la
+Ciencia de información geoespacial \\
+4. Ingeniería de software                           & 4. Seminario II\\
+5. Seminario                                        & 5. Tema de tesis\\
+\hline\noalign{\smallskip} Tercer Semestre & Cuarto Semestre\\
+1. Métodos analíticos para el procesamiento de datos geoespaciales & 1. Tema de tesis\\
+2. Herramientas para el Desarrollo de Sistemas de Información Geoespacial& \\
+3. Cómputo en Nube  & \\
+4. Seminario III& \\
+5. Tema de tesis & \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Las claves de las UA son las siguientes:
+
+\begin{tabular}{ll}
+    \hline
+    Materia                                 & Clave \\
+    \hline
+    Teoría de la computación                & 15A7073 \\
+    Reconocimiento de patrones              & 15A7139 \\
+    Fundamentos de la Ciencia de información geoespacial & 15A7097 \\
+    \hline
+    Métodos analíticos para el procesamiento de datos geoespaciales & 15A7123 \\
+    Herramientas para el Desarrollo de Sistemas de Información Geoespacial & 15A7102 \\
+    Cómputo en Nube & 15A7087 \\
+\hline
+\end{tabular}
+
+
+\section{Comité tutorial propuesto}
+
+El comité tutorial (CT) se conforma de 4 profesores:
+
+\begin{enumerate}
+\settowidth{\leftmargin}{{\Large$\circ$}}\advance\leftmargin\labelsep
+\itemsep8pt\relax \renewcommand\labelitemi{{\lower1.5pt\hbox{\Large$\circ$}}}
+    \item Dra. Ana María Magdalena Saldaña Pérez
+    \item Dr. José Giovanni Guzmán Lugo \\
+    \item Dr. Miguel Torres Ruíz \\
+    \item Dr. Cornelio Yáñez Márquez \\
+    \item M. en C. Evaristo Manuel Rojas Mayoral
+\end{enumerate}
+
+
+\textbf{NOTA:} Indicar en qué partes de la solución propuesta cada uno de los
+miembros del cuerpo académico es especialista y de que manera se considera que
+su inclusión en el comité apoyará en el desarrollo de las actividades a
+desarrollarse en la presente propuesta. Apoyarse del director de tesis para
+responder.
+
+\section{Retribución social}
+
+-Presentación de los avances del trabajo ante congresos nacionales, de forma que
+el conocimiento generado pueda ser compartido con alumnos de diferentes áreas
+del conocimiento.
+
+-Presentación del trabajo que se realiza en el proyecto y en el laboratorio ante
+alumnos de nivel superior, para compartir con ellos el conocimiento generado.
+
+-Vinculación con ONG relacionada al cuidado de aves marinas, para apoyarlos en
+su labor de conservación de aves marinas en el territorio mexicano.
+
+\section{Conclusiones}
+
+México alberga una gran diversidad de aves marinas en el mundo. Algunas aves se
+encuentran globalmente amenazadas o vulnerables. 
+
+Los algoritmos a implementar nos permitirán delimitar áreas prioritarias para la
+conservación de las especies marinas de nuestro país y modelar correlativamente
+las condiciones ambientales bajo las que vive y así podrémos predecir el hábitat
+idóneo.
+
+\section{NOTA ACLARATORIA}
+El presente documento es representativo de que tanto el alumno, así como el(los)
+director(es) de tesis están de acuerdo en trabajar conjuntamente para cumplir
+los objetivos planteados en el mismo, quedando claro que el contenido de éste es
+pieza sustentante de las labores a desarrollar por ambas partes y que al momento
+de ser entregado a la coordinación del programa, queda de conformidad su
+desarrollo por los involucrados. Considerando además que la planeación
+presentada emana de una propuesta por parte del o los director(es) de tesis y es
+un trabajo a desarrollar por el asesorado cuya labor se considera como un
+recurso humano de apoyo a un investigador.
+
+En caso de que una de las partes, alumno o director(es) de tesis decidan
+modificar el proceso de desarrollo que se describe en este documento (en un
+porcentaje menor al 50 por ciento), dicha modificación deberá de ser notificada
+a la coordinación en un plazo no mayor de 30 días a partir de la fecha de
+decisión de dicha modificación. Dicho porcentaje estará estipulado por el
+Director de Tesis. Si la modificación supera el 50 por ciento, el alumno deberá
+de volver a repetir el procedimiento administrativo de entrega de FUTE y de
+protocolo, durante el plazo establecido en el Reglamento de Estudios de Posgrado
+del IPN (REP-IPN). Un ejemplo de superación del 50 por ciento es el cambio total
+del tema de tesis o de los objetivos planteados en este documento con relación a
+una nueva propuesta.
+
+Si existe una agregación de director de tesis y la misma no implica un cambio
+del 50 por ciento del contenido de este documento de planeación inicial, no se
+requerirá la repetición del protocolo que se menciona con antelación, excepto la
+entrega del nuevo FUTE.
+
+En caso de que una de las partes, alumno o director(es) de tesis decidan dar por
+terminada la labor científica que se describe en este documento; el alumno, en
+su carácter de recurso humano de apoyo de un investigador, tendrá que formular
+otro protocolo de tesis en donde plasme las nuevas vertientes del nuevo proyecto
+de investigación a realizar con un nuevo director o directores de tesis,
+informando a la Coordinación de lo anterior y llevar a cabo el proceso
+administrativo correspondiente. El cual consiste en la entrega del FUTE
+correspondiente y la entrega del nuevo protocolo, siempre que se cumpla lo
+estipulado en los artículos 37 y 38 del REP-IPN. En especial, para solicitar el
+cambio de dirección de tesis, el alumno deberá considerar el tiempo que
+establece en el Artículo 37 del REP-IPN, para poder realizar lo anterior:
+\newline
+\newline
+\emph{El alumno podrá solicitar al Colegio de Profesores de Posgrado el cambio de director de tesis, así como de los miembros del comité tutorial, cuando se justifque plenamente bajo criterios académicos. El alumno deberá realizar la solicitud antes del término del segundo periodo escolar.}
+\newline
+\newline
+El presente protocolo deberá de entregarse a la Coordinación del Programa. Por
+otra parte, el Formato Único de Trámites Escolares (FUTE) deberá ser entregado,
+debidamente requisitado, en el Departamento de Tecnologías Educativas, ambos
+documentos en las fechas establecidas.
+
+
+NOTA: Arriba se presentan ejemplos de como colocar las referencias (bórrenlas y
+pongan las suyas). Del total de referencias bibliográficas colocadas en este
+punto, se les solicita que sea una menor cantidad de enlaces a páginas WEB de
+Internet y de artículos de congresos, con el objetivo hacer referencias a un
+mayor número de artículos científicos, provenientes de revistas indexadas. 
+
+\pagebreak
+\bibliography{../references/references.bib} 
+\bibliographystyle{unsrt}
+
+\end{document}
+
+
