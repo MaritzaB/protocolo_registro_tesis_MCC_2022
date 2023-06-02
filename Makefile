@@ -1,8 +1,6 @@
 report: \
 	reports/protocolo_reg_tesis_MCC_MaritzaBello.pdf
 
-exam: reports/examen.pdf
-
 .PHONY: \
 	all \
 	clean \
@@ -30,9 +28,6 @@ define lint
 		--function-naming-style=camelCase \
         ${1}
 endef
-
-reports/examen.pdf: reports/examen.tex
-	$(renderSimpleLatex)
 
 reports/protocolo_reg_tesis_MCC_MaritzaBello.pdf:	reports/protocolo_reg_tesis_MCC_MaritzaBello.tex
 	$(renderLatex)
