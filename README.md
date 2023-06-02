@@ -1,1 +1,2 @@
-# protocolo_registro_tesis_MCC_2022
+# Avances de tesis de maestría
+Modelado de nicho ecológico a partir de variables oceanogŕaficas
