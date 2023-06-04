@@ -1,0 +1,102 @@
+\section*{Introducción}
+\subsection*{Antecedentes}
+
+Los modelos de nicho ecológico (SDM por sus siglas en inglés, \textit{species
+distribution models}) permiten hacer inferencias sobre la distribución
+de especies y comunidades de especies, permitiendo identificar áreas
+prioritarias para la conservación \cite{flores2019ecological}, en este caso de
+aves marinas.
+
+Un nicho ecológico es el rango de condiciones ambientales bajo las cuales un
+individuo en particular tiene un éxito reproductivo de por vida, es decir las
+condiciones idóneas bajo las cuales es capaz de reproducirse
+\cite{takola2022hutchinson}.
+
+Particularmente, las aves marinas son de importancia mundial ya que juegan un
+papel importante en las funciones ecológicas de los sistemas marinos, lo que las
+convierte en excelentes indicadores de largo plazo y gran escala
+\cite{furness1997seabirds}.
+
+De acuerdo con la Unión Internacional para la Conservación dela Naturaleza
+(Birdlife International, 2021b), cerca de una tercera parte de las 368 especies
+de aves marinas reconocidas se encuentran como críticamente amenazadas,
+amenazadas o vulnerables, y el 47\% de todas las especies de aves marinas
+mostraban tendencias de decrecimiento en sus poblaciones \cite{dias2019threats}.
+
+En México habítan alrededor del 11\% de las aves de todo el mundo, con lo que
+nuestro país se coloca en el onceavo lugar a nivel mundial de riqueza
+avifaunística \cite{mendez2021ecologia}.
+
+De las 368 especies de aves marinas del mundo, México alberga 126 especies
+reconocidas, de las cuales 20 se encuentran globalmente amenazadas, cuatro
+amenzadas y 13 como vulnerables \cite{mendez2021ecologia}.
+
+Debido a esto, la importancia de establecer modelos ecológicos que nos permitan
+delimitar áreas prioritarias para la conservavión de estas especies en nuestro país.
+
+Los modelos de nicho ecológico utilizan datos de ocurrencias de alguna especie
+que junto con datos ambientales nos permiten modelar correlativamente las
+condiciones ambientales bajo las que vive la especie en cuestión y así nos
+permiten predecir su hábitat idóneo.
+
+Los modelos de nicho ecológico se usan de cuatro formas \cite{warren2011ecological}:
+
+\begin{enumerate}
+\item Para estimar la idoneidad relativa del hábitat en áreas geográficas que se
+sabe que está ocupada por la especie.
+\item Para estimar la idoneidad relativa del hábitat en áreas geográficas que no
+se sabe que está ocupada por la especie.
+\item Para estimar los cambios en la idoneidad del hábitat a lo largo del
+tiempo dado un escenario específico de cambio ambiental.
+\item Como estimación del nicho de la especie.
+\end{enumerate}
+
+
+\subsection*{Descripción de como se afronta esta problemática en la actualidad}
+
+La regresión logística, regresión de componentes y el análisis de árboles de
+clasificación y regresión, son comúnmente utilizados en el modelado ecológico
+mediante SIG \cite{munoz2004comparison}. Sin embargo, es importante hacer una
+comparativa de los algoritmos para evaluar cuál es el que nos genera un mejor
+modelo de hábitat para aves marinas.
+
+
+\subsection*{Problemática a abordar en la tesis}
+
+Este trabajo busca resolver el problema de generar un marco de trabajo que nos
+permita comparar los algoritmos de aprendizaje máquina utilizados para modelar
+el nicho ecológico de aves marinas.
+
+\section*{Características y generalidades}
+\subsection*{Descripción de la solución al problema planteado}
+
+Implementaremos tres algoritmos de aprendizaje máquina para generar modelos de
+nicho ecológico a partir de variables oceanográficas. 
+
+\subsection*{Justificación}
+
+Los modelos de nicho ecológico nos permitirán determinar las características
+ambientales del hábitat idóneo para alguna ave marina en específico.
+
+\section*{Objetivos}
+\subsection*{Objetivo General:}
+Implementar diferentes algoritmos de aprendizaje máquina para modelado de nicho
+ecológico a partir de variables oceanográficas.
+
+\subsection*{Objetivos específicos:}
+
+\paragraph*{Objetivo 1.}
+
+Implementar diferentes algoritmos de aprendizaje máquina. Entre los
+propuestos están: Regresión lineal, árboles de desición, algoritmos de
+aprendizaje máquina como redes neuronales, máxima entropía o random forest.
+
+\paragraph*{Objetivo 2.}
+
+Generar modelos de nicho ecológico usando variables oceanográficas y datos
+de desplazamientos de aves marinas.
+
+\paragraph*{Objetivo 3.}
+
+Comparar los algoritmos de aprendizaje máquina y evaluar cuál es el que
+nos genera un mejor modelo.
