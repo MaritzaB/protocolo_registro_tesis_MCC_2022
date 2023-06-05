@@ -1,0 +1,119 @@
+%---------------------------------------------------------------------
+%
+%                          configCover.tex
+%
+%---------------------------------------------------------------------
+%
+% cover.tex
+% Copyright 2009 Marco Antonio Gomez-Martin, Pedro Pablo Gomez-Martin
+%
+% This file belongs to the TeXiS manual, a LaTeX template for writting
+% Thesis and other documents. The complete last TeXiS package can
+% be obtained from http://gaia.fdi.ucm.es/projects/texis/
+%
+% Although the TeXiS template itself is distributed under the 
+% conditions of the LaTeX Project Public License
+% (http://www.latex-project.org/lppl.txt), the manual content
+% uses the CC-BY-SA license that stays that you are free:
+%
+%    - to share & to copy, distribute and transmit the work
+%    - to remix and to adapt the work
+%
+% under the following conditions:
+%
+%    - Attribution: you must attribute the work in the manner
+%      specified by the author or licensor (but not in any way that
+%      suggests that they endorse you or your use of the work).
+%    - Share Alike: if you alter, transform, or build upon this
+%      work, you may distribute the resulting work only under the
+%      same, similar or a compatible license.
+%
+% The complete license is available in
+% http://creativecommons.org/licenses/by-sa/3.0/legalcode
+%
+%---------------------------------------------------------------------
+%
+% Fichero que contiene la configuraci{\'o}n de la portada y de la 
+% primera hoja del documento.
+%
+%---------------------------------------------------------------------
+
+
+% Pueden configurarse todos los elementos del contenido de la portada
+% utilizando comandos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% T{\'i}tulo del documento:
+% \tituloPortada{titulo}
+% Nota:
+% Si no se define se utiliza el del \titulo. Este comando permite
+% cambiar el t{\'i}tulo de forma que se especifiquen d{\'o}nde se quieren
+% los retornos de carro cuando se utilizan fuentes grandes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\tituloPortada{Monte Carlo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Autor del documento:
+% \autorPortada{Nombre}
+% Se utiliza en la portada y en el valor por defecto del
+% primer subt{\'i}tulo de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.18\textwidth}
+	\includegraphics[width=0.8\textwidth]{imagen/logo-cic.png}
+\end{minipage}%
+\begin{minipage}{0.82\textwidth}
+\begin{center}
+	\large \sc Instituto Politécnico Nacional
+\end{center}
+\end{minipage}
+
+\vspace{0.5cm}
+\centerline{\Large Centro de Investigación en Computación}
+\vspace{0.5cm}
+\centerline{\Large Laboratorio de Procesamiento Inteligente de Información Geoespacial}
+
+\vspace*{\stretch{1}}
+\begin{center}
+\Large \bf
+Modelado de nicho ecológico de aves marinas a partir de variables oceanográficas, usando modelos de machine learning
+\end{center}
+\vspace*{\stretch{1}}
+
+\centerline{\Large \bf Tesis que presenta}
+\vspace{0.5cm}
+\centerline{\Large \bf Ana Maritza Bello Yañez}
+\vspace{0.5cm}
+\centerline{\Large \bf para obtener el Grado de}
+\vspace{0.5cm}
+\centerline{\Large \bf Maestr\'\i a en Ciencias}
+\vspace{0.5cm}
+\centerline{\Large \bf en Computaci\'on}
+\vspace{0.5cm}
+\centerline{\Large \bf }
+\vspace{1.2cm}
+\centerline{\Large \bf Directores de Tesis}
+\vspace{0.5cm}
+\centerline{\Large \bf Dra. Ana María Magdalena Saldaña Pérez }
+\centerline{\Large \bf Dr. José Giovanni Guzmán Lugo }
+ 
+\vspace{1.2cm}
+{\large \bf Ciudad de México \hfill \today}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\pagebreak
+\clearpage
+\clearpage
+\clearpage
+
+%%
+%% Creamos las portadas
+%%
+%\makeCover
+
+% Variable local para emacs, para que encuentre el fichero
+% maestro de compilaci{\'o}n
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
