@@ -1,17 +1,55 @@
+
 \section*{Datos}
 
 \subsection*{Datos de la especie cuyo nicho ecológico se va a modelar}
 
 Los datos utilizados para el modelado de nicho ecológico de este trabajo son
-datos de las trayectorias de aves marinas, particularmente el Albatros de
+datos de GLS de las trayectorias de aves marinas, particularmente el albatros de
 Layssan \textit{Phoebastria immutabilis}.
 
 Isla Guadalupe, frente a la península de Baja California, México, alberga a la
 colonia reproductora más importante y en crecimiento de albatros de Laysan en el
 Pacífico Oriental \cite{hernandez2014laysan}.
 
-Los datos fueron tomados por el Grupo de Ecología y Conservación de Islas.
-Otra fuente de datos a revisar es: \href{https://data.seabirdtracking.org/dataset/1928}{seabirdtracking}.
+Los datos fueron tomados por el Grupo de Ecología y Conservación de Islas. El
+conjunto de datos contiene las trayectorias de albatros de Layssan de 47
+individuos desde el año 2014 hasta el año 2018, distribuidos de la siguiente
+manera: \\
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{lcc}
+    Año & Mes & Cantidad de trayectorias \\
+    \hline
+    \multirow{3}{*}{2014} & 05 & 2\\
+    & 06 & 1\\
+    & 12 & 4\\
+    \hline
+    \multirow{3}{*}{2015} & 01 & 4\\
+    & 02 & 3\\
+    & 03 & 2\\
+    \hline
+    \multirow{3}{*}{2016} & 02 & 2\\
+    & 03 & 1\\
+    & 04 & 1\\
+    \hline
+    \multirow{3}{*}{2017} & 02 & 6 \\
+    & 03 & 5 \\
+    & 08 & 1 \\
+    \hline
+    \multirow{2}{*}{2018} & 01 & 13 \\
+    & 02 & 19 \\
+    \hline
+\end{tabular}
+\caption{ Cantidad de trayectorias de individuos de albatros de Layssan
+disponibles para el modelado}
+\end{center}
+\end{table}
+
+
+
+Otra fuente de datos a revisar es:
+\href{https://data.seabirdtracking.org/dataset/1928}{seabirdtracking}.
 
 \subsection*{Datos de variables oceanográficas}
 
@@ -26,14 +64,39 @@ los albatros de Layssan viajan a aguas más frías y productivas, pero están
 restringidas al ambiente de baja productividad cerca de la colonia durante la
 crianza, cuando los requerimientos son mayores \cite{kappes2015reproductive}.
 
-Algunas de las variables oceanográficas comunmente usadas para el modelado de
-nicho ecológico de albatros de Layssan son \cite{henry2021successful}:
+Las variables oceanográficas que han demostrado tener una mayor influencia para
+la predicción de nicho ecológico de albatros de Layssan durante la época de
+reproducción y post-reproducción son \cite{henry2021successful}:
 
 \begin{itemize}
-    \item Temperatura superficial del marco
-    \item Concentración de clorofila
-    \item Salinidad de la superficie del mar
-    \item Corrientes oceanográficas
+    \item \textbf{Temperatura superficial del mar TSS (SST por sus siglas en
+    inglés).} La TSS influye en la productividad biológica del océano y en la
+    distribución de presas marinas. En áreas donde las aguas son más frías, como
+    las corrientes ascendentes y las surgencias, se produce una mayor
+    productividad biológica debido a la presencia de nutrientes ricos en el
+    agua. Estas áreas atraen una mayor abundancia de presas, lo que a su vez
+    atrae a los albatros de Laysan en busca de alimento.
+
+    \item \textbf{Concentración de clorofila CCL (CHL por sus siglas en
+    inglés).} De acuerdo con la NOAA (Oficina Nacional de Administracioń
+    Oceánica y Atmosférica en español), los datos de CCL proveen un estimado de
+    la biomasa de fitoplancton vivo en la capa superficial del mar. Este se
+    utiliza como un indicador de productividad primaria, es decir, la cantidad
+    de cantidad de materia orgánica que se produce a través de la fotosíntesis.
+    Las áreas con una mayor CCL, como las regiones costeras, las surgencias y
+    las zonas de afloramiento, suelen ser más productivas en términos de biomasa
+    y abundancia de presas marinas.
+
+    \item \textbf{Velocidad del viento.} Dado que los albatros de Laysan se
+    caracterizan por desplazarse largas distancias, dependen del viento para
+    moverse. La velocidad y dirección del viento influye en su capacidad de
+    vuelo aunque también puede influir en la disponibilidad de alimento. Por
+    ejemplo, aguas agitadas pueden dificultar la caza de peces y calamares.
+
 \end{itemize}
 
+La importancia de cada una de estas variables cambia con el lugar y periodo de
+reproducción.
 
+El conjunto de datos satelitales de estas variables están acotados a los datos
+de trayectorias de albatros que tenemos.

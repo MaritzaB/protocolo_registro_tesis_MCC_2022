@@ -57,6 +57,8 @@ clean:
 	rm --force tesis/*.toc
 	rm --force tesis/*.lof
 	rm --force tesis/*.lot
+	rm --force tesis/introduccion/*.aux
+	rm --force tesis/otros/*.aux
 
 format:
 	black --line-length 60 src/*.py

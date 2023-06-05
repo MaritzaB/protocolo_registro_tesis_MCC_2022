@@ -9,6 +9,7 @@
 \usepackage{amsfonts}
 \usepackage{blindtext}
 \usepackage{hyperref}
+\usepackage{multirow}
 %\usepackage[pdf]{pstricks}
 %\usepackage{epstopdf}
 %\DeclareGraphicsExtensions{.eps}
@@ -80,15 +81,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 
 \include{otros/resumen.tex}
 
-%\include{otros/abstract}
 
-% tabla de contenido desde aqui --- 
-%\tableofcontents
-%\listoffigures
-%\listoftables
-%\newpage
-
-% ------------------- 
 \mainmatter
 \setcounter{chapter}{0}
 \setcounter{page}{0}
@@ -96,28 +89,14 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \pagenumbering{arabic}
 
 
-
-%Por una simulaci{\'o}n, nos referimos a un modelo computacional que reproduce las
-%caracter{\'i}sticas principales de un sistema f{\'i}sico adentro de la computadora.
-
- %\tableofcontents 
-%\include{preface} 
-
-
 \include{introduccion/capitulo_01.tex}
 \include{introduccion/datos.tex}
-%%\backmatter
-%\include{ComputoParalelo/cap-2}
-%\include{MonteCarlo/cap3}
-%\include{IntegralWiener/cap-4}
-%\include{ImplementacionyDiseno/cap-5}
-%\include{Resultados/cap6}
-%\include{conclusiones/cap7}
-%%\include{Yare}
+
 \backmatter 
-%------------BIBLIOGRAF{\'i}A
+
+%------------Bibliografía ---------------%
 \pagebreak
 \bibliography{../references/references.bib} 
-\bibliographystyle{unsrt}
+\bibliographystyle{apalike}
 
 \end{document}
